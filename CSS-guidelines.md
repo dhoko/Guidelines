@@ -1,19 +1,20 @@
 # Pour une conception simple et cohérente de vos intégrations
 
-Ce document a pur but de définir une liste de recommendations pour permettre une intégration simple et compréhensible.
+Ce document a pour but de définir une liste de recommandations pour permettre une intégration simple et compréhensible.
 
-Ce document est destiné avant tout à servir au sein de mon équipe dans mon travail. Ce n'est pas gravé dans le marbre, sauf pour les personnes travaillant directement avoir moi sur de l'intégration.
+Ce document est destiné avant tout à servir au sein de mon équipe dans mon travail. Ce n'est pas gravé dans le marbre, sauf pour les personnes travaillant directement avec moi sur de l'intégration.
 
 Merci de bien vouloir contribuer.
 
-Exprimez vos idées, vos intérogations et vos remarques en bien ou en mal.
+Exprimez vos idées, vos interrogations et vos remarques en bien ou en mal
 
 
 ## Introduction
 
-Une intégration ce n'est pas facile, c'est en partant ainsi que l'on risque de faire de gros dégats. C'est pareil pour les CSS, ce n'est pas parce qu'il n'y a pas de logique comme dans un langage du genre, JavaScript, C etc. que c'est simple.
+Une intégration ce n'est pas facile, c'est en partant ainsi que l'on risque de faire de gros dégâts. C'est pareil pour les CSS, ce n'est pas parce qu'il n'y a pas de logique comme dans un langage du genre, JavaScript, C etc. que c'est simple.
 
-Déjà, le `if` nous avons (pseudo-classes etc.), le calcul ça arrive (calc), etc. On ne va pas tout lister, il y a de quoi faire. Quoi qu'il en soit le langage est simple, mais on fait très vite n'importe quoi. Résultat ?
+Déjà, le 'if' nous avons ( *pseudo-classes etc.* ), le calcul ça arrive ( *calc* ), etc. On ne va pas tout lister, il y a de quoi faire. Quoi qu'il en soit le langage est simple, mais on fait très vite n'importe quoi. Résultat ?
+
 - Des CSS > 2000 lignes
 - 15 000 sélécteurs
 - !important
@@ -22,9 +23,9 @@ Déjà, le `if` nous avons (pseudo-classes etc.), le calcul ça arrive (calc), e
 - -ms-* (pour une intégration dédié Webkit -- Webkit m'a tuer)
 - etc.
 
-Devant ces cancers, nous autres intégrateurs nous devons apportez des soins. La cascade c'est de l'art, pas un truc qui fait chier donc on met un `!important`.
+Devant ces cancers, nous autres intégrateurs nous devons apporter des soins. La cascade c'est de l'art, pas un truc qui fait chier donc on met un '!important'.
 
-Une intégration doit facilement pouvoir évoluer et pouvoir et changer de mains, sans pour autant  perdre le dev ou l'intégrateur.
+Une intégration doit facilement pouvoir évoluer et pouvoir et changer de mains, sans pour autant perdre le dev ou l'intégrateur.
 
 Le mot d'ordre est [KISS](http://wikipedia.org/KISS) issu du monde unix. Puis au passage DRY aussi.
 
@@ -42,29 +43,32 @@ Le mot d'ordre est [KISS](http://wikipedia.org/KISS) issu du monde unix. Puis au
 ## Avant de commencer
 
 - **Ne jamais styliser sur un id**
-- **Ne jamais utliser !important**
+- **Ne jamais utiliser !important**
 - Ne jamais mettre une seule typo dans une font-family
 - Test de la typo sur un navigateur = tester une intégration dans Chrome et dire ok pour IE6
 - Le moins possible de classes magiques et atomique (sauf 1 cas : les grilles cf, [960.gs](http://960.gs))
-- Lire et imprimer ca :  [Learn CSS Specifishity with plankton, fish and sharks](http://www.standardista.com/wp-content/uploads/2012/01/specifishity1.pdf)
+- Lire et imprimer ça :  [Learn CSS Specifishity with plankton, fish and sharks](http://www.standardista.com/wp-content/uploads/2012/01/specifishity1.pdf)
 
 ### Pourquoi on ne stylise pas sur un id ou avec !important
 
-Ils possèdent tous les deux une spécifcité trop importante. Passer dessus un id on peut aisément. Mais pour !important, gloups (déjà vu hélas...).
+Ils possèdent tous les deux une spécificité trop importante. Passer dessus un id on peut aisément. Mais pour !important, gloups (déjà vu hélas...).
 
-Un id étant unique, très peu d'éléments sont suceptibles d'avoir un style avec id, car ça veut dire un truc qui n'est jamais dupliqué ( *un logo dans le header on peut imaginer* ). Une fois que l'on maitrise le contexte on peut styliser un id.
+Un id étant unique, très peu d'éléments sont susceptibles d'avoir un style avec id, car ça veut dire un truc qui n'est jamais dupliqué ( *un logo dans le header on peut imaginer* ). Une fois que l'on maitrise le contexte on peut styliser un id.
 
-Par contre pour `!important`, il n'y a pas de négociation. Non, je pense même que mettre un !important dans sa CSS montre que celle-ci est mal pensée.
+Par contre, pour `!important`, il n'y a pas de négociation. Non, je pense même que mettre un !important dans sa CSS montre que celle-ci est mal pensée.
 
 
 ## 1. Indentation
 
-Les espaces, ceux-ci au nombre de 4. C'est aéré et plus lisible. Puis l'espace passe parfaitement partout ce qui n'est pas le cas de la tabulation.
+Identons avec des **espaces**, avec un tab qui vaut 4 espaces. Le code en est plus clair et lisible.
 
-- **On ne mélange pas les deux**
+De plus l'espace passe partout quel que soit le support et l'éditeur ou le site ( *copions du code dans une issue Github tab vs espaces* ).
 
-> Pensez à configurer votre éditeur comme SublimeText pour qu'il enregistre vos fichiers avec des espaces automatiquement.
+***On ne mélange pas les deux***
 
+> PS 1 : pensez à configurer votre éditeur comme SublimeText pour qu'il enregistre vos fichiers avec des espaces automatiquement.
+
+> PS 2 : regardez du côté d'[EditorConfig](http://editorconfig.org/), ça permet de définir des conventions de codages suivant le type du fichier sur lequel nous sommes en train de travailler.
 
 ## 2. Commentaires
 
@@ -79,7 +83,7 @@ Sauf que nous faisons du CSS, donc nos classes sont **expressives** et donc il s
 *
 ************************/
 .header::before {
-	content: '42'
+    content: '42'
 }
 ```
 
@@ -89,12 +93,12 @@ Sinon en plein millieu de votre code, un commentaire classique suffit :
 
 ```css
 .post-content {
-	padding: 2px 4px;
+    padding: 2px 4px;
 
-	/* Un peu de magie */
-	margin-left: 13,37px
+    /* Un peu de magie */
+    margin-left: 13,37px
 
-	border-color: #BADA55
+    border-color: #BADA55
 }
 ```
 
@@ -116,9 +120,9 @@ On obtient donc :
 
 ```css
 input[type="checkbox"]:checked + div {
-	border-color: #bada55;
-	background-color: #676767;
-	opacity: 1
+    border-color: #bada55;
+    background-color: #676767;
+    opacity: 1
 }
 ```
 
@@ -154,16 +158,16 @@ Par exemple souhaite styliser nos box sur une home page, celles-ci se ressemble,
 ```css
 /***********************
 *
-*	Box Home page
+*   Box Home page
 *
 ************************/
 .box-info {width: 600px; margin: 0 auto}
 
 .box {
-	padding: 5px 10px;
-	margin: 5px;
-	border: 1px solid #eee;
-	color: #777
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid #eee;
+    color: #777
 }
 
 .box.warn {color: red}
@@ -173,9 +177,9 @@ On a alors un dom qui se présente ainsi :
 
 ```html
 <div class="box-info">
-	<div class="box"></div>
-	<div class="box warn"></div>
-	<div class="box"></div>
+    <div class="box"></div>
+    <div class="box warn"></div>
+    <div class="box"></div>
 </div>
 ```
 
@@ -196,9 +200,9 @@ Par exemple ici la classe `.box` n'est pas forcément nécessaire, nous pouvons 
 ```css
 [clas^="box-"] {
     padding: 5px 10px;
-	margin: 5px;
-	border: 1px solid #eee;
-	color: #777
+    margin: 5px;
+    border: 1px solid #eee;
+    color: #777
 }
 .box-warn {color: red}
 ```
@@ -208,9 +212,9 @@ On a alors un dom qui se présente ainsi :
 
 ```html
 <div class="box-info">
-	<div class="box-success"></div>
-	<div class="box-error"></div>
-	<div class="box-warn"></div>
+    <div class="box-success"></div>
+    <div class="box-error"></div>
+    <div class="box-warn"></div>
 </div>
 ```
 
@@ -275,7 +279,7 @@ Les préprocesseurs c'est bien très bien. Mais ceux-ci imposent certaines chose
 Je ne suis pas contre, mais ici on parle de CSS.
 Bilan : non.
 
-> Si tu veux te lancer quand même car tu te touches en CSS, pars vers Sass. Puis pour trouver de l'information et un frenchie qui se touche bien avec Sass va voir [Hugo Giraudel](http://hugogiraudel.com).
+> Si tu veux te lancer quand même car tu te touches en CSS, pars vers Sass. Puis pour trouver de l'information et un frenchie qui se touche bien avec Sass va voir [Hugo Giraudel](http://hugogiraudel.com)
 
 ## 7. Le futur
 
