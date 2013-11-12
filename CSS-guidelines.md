@@ -24,11 +24,11 @@ Et ne pas oublier que dans CSS il y a cascade.
 
 1. [Indentation](#1-indentation--)
 2. [Commentaires](#2-commentaires--)
-3. [Formatage](#-formatage--)
-4. [Quelques éléments indispensable](#chaptire4)
-5. [Ecriture des classes](#chaptire5)
-6. [Préprocesseurs ?](#chaptire6)
-7. [Le futur](#chaptire7)
+3. [Formatage](#3-formatage--)
+4. [Quelques éléments indispensable](#4-quelques-%C3%A9l%C3%A9ments-indispensable--)
+5. [Ecriture des classes](#5-ecriture-des-classes--)
+6. [Préprocesseurs ?](#6-pr%C3%A9processeurs---)
+7. [Le futur](#7-le-futur--)
 
 ## Avant de commencer
 
