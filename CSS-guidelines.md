@@ -275,7 +275,7 @@ Les préprocesseurs c'est bien très bien. Mais ceux-ci imposent certaines chose
 Je ne suis pas contre, mais ici on parle de CSS.
 Bilan : non.
 
-> Si tu veux te lancer quand même car tu te touches en CSS, pars vers Sass. Puis pour trouver de l'information et un frenchie qui se touche bien avec Sass va voir [Hugo Giraudel](http://hugogiraudel.com/.
+> Si tu veux te lancer quand même car tu te touches en CSS, pars vers Sass. Puis pour trouver de l'information et un frenchie qui se touche bien avec Sass va voir [Hugo Giraudel](http://hugogiraudel.com).
 
 ## 7. Le futur
 
