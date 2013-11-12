@@ -5,20 +5,29 @@ Ce document a pur but de définir une liste de recommendations pour permettre un
 Ce document est destiné avant tout à servir au sein de mon équipe dans mon travail. Ce n'est pas gravé dans le marbre, sauf pour les personnes travaillant directement avoir moi sur de l'intégration.
 
 Merci de bien vouloir contribuer.
+
 Exprimez vos idées, vos intérogations et vos remarques en bien ou en mal.
 
 
 ## Introduction
 
-Une intégration n'est pas facile. Partir ainsi est le meilleur moyen de passer à coté de son intégration. Celle-ci doit facilement pouvoir évoluer et pouvoir et changer de mains, sans pour autant  perdre le dev ou l'intégrateur.
+Une intégration ce n'est pas facile, c'est en partant ainsi que l'on risque de faire de gros dégats. C'est pareil pour les CSS, ce n'est pas parce qu'il n'y a pas de logique comme dans un langage du genre, JavaScript, C etc. que c'est simple.
+
+Déjà, le `if` nous avons (pseudo-classes etc.), le calcul ça arrive (calc), etc. On ne va pas tout lister, il y a de quoi faire. Quoi qu'il en soit le langage est simple, mais on fait très vite n'importe quoi. Résultat ?
+- Des CSS > 2000 lignes
+- 15 000 sélécteurs
+- !important
+- #lol #de abbr#feu b.titanic + .iceberg {float : none }
+- 43,43px
+- -ms-* (pour une intégration dédié Webkit -- Webkit m'a tuer)
+- etc.
+
+Devant ces cancers, nous autres intégrateurs nous devons apportez des soins. La cascade c'est de l'art, pas un truc qui fait chier donc on met un `!important`.
+
+Une intégration doit facilement pouvoir évoluer et pouvoir et changer de mains, sans pour autant  perdre le dev ou l'intégrateur.
 
 Le mot d'ordre est [KISS](http://wikipedia.org/KISS) issu du monde unix. Puis au passage DRY aussi.
 
-Et ne pas oublier que dans CSS il y a cascade.
-
-- On ne doit pas se demander combien d'intégrateurs/dev sont passés sur une intégration
-- Si vous ne savez pas comment faire, c'est qu'il faut relire ce document
-- Si vous ne savez toujours pas, suivez les conventions pour adapter le problème
 
 ## Table des matières
 
@@ -35,7 +44,8 @@ Et ne pas oublier que dans CSS il y a cascade.
 - **Ne jamais styliser sur un id**
 - **Ne jamais utliser !important**
 - Ne jamais mettre une seule typo dans une font-family
-- Le moins possible de classes magiques (.left {float: left;})
+- Test de la typo sur un navigateur = tester une intégration dans Chrome et dire ok pour IE6
+- Le moins possible de classes magiques et atomique (sauf 1 cas : les grilles cf, [960.gs](http://960.gs))
 - Lire et imprimer ca :  [Learn CSS Specifishity with plankton, fish and sharks](http://www.standardista.com/wp-content/uploads/2012/01/specifishity1.pdf)
 
 ### Pourquoi ID et !important
