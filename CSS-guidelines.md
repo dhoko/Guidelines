@@ -72,9 +72,12 @@ De plus l'espace passe partout quel que soit le support et l'éditeur ou le site
 
 ## 2. Commentaires
 
-Comme partout un code sans commentaires c'est de la merde. Personne ne possède la même logique et compréhension du code. Donc on commente sans discuter.
+Quel que soit le projet : *un code sans commentaires ne vaut rien*.
 
-Sauf que nous faisons du CSS, donc nos classes sont **expressives** et donc il suffit de mettre un bloc de code au dessus de `.header` par exemple pour toutes les modifications relatives à ce qui est dedans. Ce sont des commentaires de zone/section.
+Il n'y a pas d'argument recevable si ce n'est, une issue de 3 écrans pour vous expliquer pourquoi on commente, comment et avec quel outil ( *travailler avec moi est très drôle* ).
+
+Revenons à nos moutons, en CSS nous ne commentons pas tout et pas n'importe comment. Nous faisons ici du **commentaire de zone**. Les classes doivent être assez expressives pour permettre ceci ( *encore un coup contre le CSS atomique* ).
+
 
 ```css
 /***********************
@@ -82,14 +85,20 @@ Sauf que nous faisons du CSS, donc nos classes sont **expressives** et donc il s
 *    Header
 *
 ************************/
+
+.header {
+    height: 150px;
+    background: #bada55
+}
+
+.header ul li {display: inline-block} // Spéciale dédicasse à IE
+
 .header::before {
     content: '42'
 }
 ```
 
-On ne met pas d'étoile en fin, c'est de la perte de temps pour juste de l'ésthétique, qui de plus est lors du dev.
-
-Sinon en plein millieu de votre code, un commentaire classique suffit :
+Sinon en plein milieu de votre code, un commentaire classique suffit :
 
 ```css
 .post-content {
@@ -98,11 +107,11 @@ Sinon en plein millieu de votre code, un commentaire classique suffit :
     /* Un peu de magie */
     margin-left: 13,37px
 
-    border-color: #BADA55
+    border-color: #c0ffee
 }
 ```
 
-Le fait de sauter une ligne avant et après met en valeur ce commentaire.
+Le fait de sauter une ligne avant et après peut mettre en valeur ce commentaire.
 
 ## 3. Formatage
 
