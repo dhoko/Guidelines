@@ -22,9 +22,15 @@ Et ne pas oublier que dans CSS il y a cascade.
 
 ## Table des matières
 
-1. [Avant de commencer](#start)
+1. [Indentation](#chaptire1)
+2. [Commentaires](#chaptire2)
+3. [Formatage](#chaptire3)
+4. [Quelques éléments indispensable](#chaptire4)
+5. [Ecriture des classes](#chaptire5)
+6. [Préprocesseurs ?](#chaptire6)
+7. [Le futur](#chaptire7)
 
-## Avant de commencer <span id="start"></span>
+## Avant de commencer
 
 - **Ne jamais styliser sur un id**
 - **Ne jamais utliser !important**
@@ -37,7 +43,7 @@ Et ne pas oublier que dans CSS il y a cascade.
 Styliser avec ID n'est pas un mal en soi, c'est juste que l'id étant unique ce style est "mort"pour la suite. On ne peut le replacer l'extendre. Cela dit sur certains contextes on peut très bien s'en servir. Il suffit de maitriser le contexte.
 
 
-## 1. Indentation
+## 1. Indentation  <span id="chaptire1"></span>
 
 Les espaces, ceux-ci au nombre de 4. C'est aéré et plus lisible. Puis l'espace passe parfaitement partout ce qui n'est pas le cas de la tabulation.
 
@@ -46,7 +52,7 @@ Les espaces, ceux-ci au nombre de 4. C'est aéré et plus lisible. Puis l'espace
 > Pensez à configurer votre éditeur comme SublimeText pour qu'il enregistre vos fichiers avec des espaces automatiquement.
 
 
-## 2. Commentaires
+## 2. Commentaires  <span id="chaptire2"></span>
 
 Comme partout un code sans commentaires c'est de la merde. Personne ne possède la même logique et compréhension du code. Donc on commente sans discuter.
 
@@ -80,7 +86,7 @@ Sinon en plein millieu de votre code, un commentaire classique suffit :
 
 Le fait de sauter une ligne avant et après met en valeur ce commentaire.
 
-## 3. Formatage
+## 3. Formatage  <span id="chaptire3"></span>
 
 - Un espace entre le nom du tag/sélécteur et l'accolade ouvrante
 - Retour à la ligne après chaques propriétées
@@ -115,7 +121,7 @@ Par ordre logique :
 Après c'est une recommendation, on peut faire avec un ordre alphabéthique. Cela dit on va tenter d'automatiser par la suite un parsing du CSS pour trier tout ce code proprement.
 > Une piste [The Greatest tool for sorting CSS properties in specific order](http://csscomb.com/) ou alors un truc avec Grunt.
 
-# Dans le détail
+## Quelques éléments indispensable  <span id="chaptire4"></span>
 
 - `[type=submit]` = non préférez une structure propre : `[type="submit"]`
 - `border:0px` = non l'unité est inutile ici -> `border: 0`
@@ -126,7 +132,7 @@ Après c'est une recommendation, on peut faire avec un ordre alphabéthique. Cel
 
 > Une lecture sur les unités en CSS [Which CSS Measurements to use when](http://demosthenes.info/blog/775/Which-CSS-Measurements-To-Use-When)
 
-## Ecriture des classes
+## Ecriture des classes  <span id="chaptire5"></span>
 
 Afin d'utiliser au maximum la cascade nous utiliserons des classes avec héritages.
 
@@ -244,14 +250,14 @@ Est ce que tu comprends ce que c'est ? Moi non plus.
 Non car le **CSS Atomique** c'est exactement pareil que de faire ca : `style="font:12px; margin:20px;padding:10px"`. En gros, ce n'est pas du CSS.
 
 
-## Préprocesseurs ?
+## Préprocesseurs ?  <span id="chaptire6"></span>
 
 Les préprocesseurs c'est bien très bien. Sauf que si vous les utilisez sans connaitre le CSS vous perdez votre temps. Car bien utilisé ca produit de belles choses, sinon non, bien au contraire.
 
 Bilan : non.
 Sinon SASS.
 
-## Le futur
+## Le futur  <span id="chaptire7"></span>
 
 Et si on expérimentait Flexbox ? Voir les performances sur Android et iOS serait sympathique. On pourrait aussi voir son influence sur les FPS.
 
