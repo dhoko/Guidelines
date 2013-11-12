@@ -115,14 +115,14 @@ Le fait de sauter une ligne avant et après peut mettre en valeur ce commentaire
 
 ## 3. Formatage
 
-- Un espace entre le nom du tag/sélécteur et l'accolade ouvrante
-- Retour à la ligne après chaques propriétées
+- Un espace entre le nom du tag/sélecteur et l'accolade ouvrante
+- Retour à la ligne après chaque propriété
 - Pas de point virgule pour la dernière propriété
-- Toujours des doubles guillements pour les sélécteurs d'attrubuts
-- Indentation de 4 espaces avant chaque propriétée
+- Toujours des doubles guillemets pour les sélecteurs d'attributs
+- Indentation de 4 espaces avant chaque propriété
 - Pas d'espace entre la propriété et le :
 - Un espace après le :
-- Pas d'inline si > 2 propriétées
+- Pas d'inline si > 2 propriétés
 - Un saut de ligne entre deux styles
 
 On obtient donc :
@@ -139,16 +139,20 @@ input[type="checkbox"]:checked + div {
 
 Par ordre logique :
 
--1 Le display
--2 La taille
--3 Les modifications tailles
--4 Les background/couleurs
--5 La typo
+.1 Le display
+.2 La taille
+.3 Les modifications tailles
+.4 Les background/couleurs
+.5 La typo
 
-Après c'est une recommendation, on peut faire avec un ordre alphabéthique. Cela dit on va tenter d'automatiser par la suite un parsing du CSS pour trier tout ce code proprement.
-> Une piste [The Greatest tool for sorting CSS properties in specific order](http://csscomb.com/) ou alors un truc avec Grunt.
+Après ceci est une recommandation, on peut également le faire avec un ordre alphabétique.
+
+Ce n'est pas le plus important en soi, car c'est quelque chose que l'on peut nettoyer par la suite.
+
+> Une piste [The Greatest tool for sorting CSS properties in specific order](http://csscomb.com/) ou alors il doit surement exister une tâche pour Grunt.
 
 ## 4. Quelques éléments indispensable
+
 - `[type=submit]` = non préférez une structure propre : `[type="submit"]`
 - `border:0px` = non l'unité est inutile ici -> `border: 0`
 - `-webkit-border-radius` **Non** [What CSS to prefix?](http://shouldiprefix.com/)
