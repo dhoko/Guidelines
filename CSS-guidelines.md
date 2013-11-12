@@ -326,4 +326,4 @@ Et si on expérimentait Flexbox ? Voir les performances sur Android et iOS serai
 - [Em Baseline Generator](http://joshnh.com/tools/em-baseline-generator.html) Car l'em c'est bon pour la santé.
 - [CSS Almanac](http://css-tricks.com/almanac/) Pour comprendre ce que sont les sélecteurs CSS et qui sont-ils. Idem pour les propriétés.
 - [What CSS to prefix?](http://shouldiprefix.com/) Can I use version user-friendly
-- [CSS Compatibility and Internet Explorer](http://msdn.microsoft.com/en-us/library/cc351024(VS.85).aspx) un classique à garder
+- [CSS Compatibility and Internet Explorer](http://msdn.microsoft.com/en-us/library/cc351024.aspx) un classique à garder
