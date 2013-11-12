@@ -1,6 +1,11 @@
 # Pour une conception simple et cohérente de vos intégrations
 
-> Ce document a pour but de définir une liste de recommendations afin de simplifier une intégration et la rendre facile à maintenir.
+Ce document a pur but de définir une liste de recommendations pour permettre une intégration simple et compréhensible.
+
+Ce document est destiné avant tout à servir au sein de mon équipe dans mon travail. Ce n'est pas gravé dans le marbre, sauf pour les personnes travaillant directement avoir moi sur de l'intégration.
+
+Merci de bien vouloir contribuer.
+Exprimez vos idées, vos intérogations et vos remarques en bien ou en mal.
 
 
 ## Introduction
@@ -15,7 +20,11 @@ Et ne pas oublier que dans CSS il y a cascade.
 - Si vous ne savez pas comment faire, c'est qu'il faut relire ce document
 - Si vous ne savez toujours pas, suivez les conventions pour adapter le problème
 
-## Avant de commencer
+## Table des matières
+
+1. [Avant de commencer](#start)
+
+## Avant de commencer <span id="start"></span>
 
 - **Ne jamais styliser sur un id**
 - **Ne jamais utliser !important**
@@ -71,7 +80,7 @@ Sinon en plein millieu de votre code, un commentaire classique suffit :
 
 Le fait de sauter une ligne avant et après met en valeur ce commentaire.
 
-## 3. Formatage 
+## 3. Formatage
 
 - Un espace entre le nom du tag/sélécteur et l'accolade ouvrante
 - Retour à la ligne après chaques propriétées
@@ -161,7 +170,7 @@ On a alors un dom qui se présente ainsi :
 
 ### Mode avancée
 
-Si vous êtes à l'aise avec vos CSS vous pouvez passer du côté obscur de l'intégrateur, la manipulation d'attribut. 
+Si vous êtes à l'aise avec vos CSS vous pouvez passer du côté obscur de l'intégrateur, la manipulation d'attribut.
 
 Par exemple ici la classe `.box` n'est pas forcément nécessaire, nous pouvons aller beaucoup plus loin en concervant un bon niveau de lisibilitée.
 
