@@ -39,6 +39,7 @@ Le mot d'ordre est [KISS](http://wikipedia.org/KISS) issu du monde unix. Puis au
 5. [Ecriture des classes](#5-ecriture-des-classes--)
 6. [Préprocesseurs ?](#6-pr%C3%A9processeurs---)
 7. [Le futur](#7-le-futur--)
+8. [Le futur](#8-quelques-liens)
 
 ## Avant de commencer
 
@@ -327,3 +328,7 @@ Et si on expérimentait Flexbox ? Voir les performances sur Android et iOS serai
 - [CSS Almanac](http://css-tricks.com/almanac/) Pour comprendre ce que sont les sélecteurs CSS et qui sont-ils. Idem pour les propriétés.
 - [What CSS to prefix?](http://shouldiprefix.com/) Can I use version user-friendly
 - [CSS Compatibility and Internet Explorer](http://msdn.microsoft.com/en-us/library/cc351024.aspx) un classique à garder
+
+## 9. Remerciements
+
+A vous :)
