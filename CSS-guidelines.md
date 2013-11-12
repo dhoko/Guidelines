@@ -39,7 +39,7 @@ Le mot d'ordre est [KISS](http://wikipedia.org/KISS) issu du monde unix. Puis au
 5. [Ecriture des classes](#5-ecriture-des-classes--)
 6. [Préprocesseurs ?](#6-pr%C3%A9processeurs---)
 7. [Le futur](#7-le-futur--)
-8. [Le futur](#8-quelques-liens)
+8. [Quelques liens](#8-quelques-liens)
 
 ## Avant de commencer
 
