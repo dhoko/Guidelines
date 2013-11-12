@@ -170,7 +170,7 @@ Afin d'utiliser au maximum la cascade nous utiliserons des classes avec héritag
 *   Box Home page
 *
 ************************/
-.box-info {width: 600px; margin: 0 auto}
+.informations {width: 600px; margin: 0 auto}
 
 .box {
     padding: 5px 10px;
@@ -186,7 +186,7 @@ Afin d'utiliser au maximum la cascade nous utiliserons des classes avec héritag
 On a alors un dom qui se présente ainsi :
 
 ```html
-<div class="box-info">
+<div class="informations">
     <div class="box"></div>
     <div class="box warn"></div>
     <div class="box"></div>
@@ -204,9 +204,9 @@ Ici `div.box.warn` est avec une couleur de police rouge et une bordure rouge ég
 
 ### Mode avancée
 
-Si vous êtes à l'aise avec vos CSS vous pouvez passer du côté obscur de l'intégrateur, la manipulation d'attribut.
+Si vous êtes à l'aise avec vos CSS vous pouvez passer du côté obscur de l'intégrateur, la manipulation d'attribut. Si vous n'êtes pas vraiment à l'aise utilisez ce guide : [The Skinny on CSS Attribute Selectors](http://css-tricks.com/attribute-selectors/).
 
-Par exemple ici la classe `.box` n'est pas forcément nécessaire, nous pouvons aller beaucoup plus loin en concervant un bon niveau de lisibilitée.
+Par exemple ici la classe `.box` n'est pas forcément nécessaire, nous pouvons aller beaucoup plus loin en conservant un bon niveau de lisibilité.
 
 ```css
 [clas^="box-"] {
@@ -216,26 +216,28 @@ Par exemple ici la classe `.box` n'est pas forcément nécessaire, nous pouvons 
     color: #777
 }
 .box-warn {color: red}
+.box-success {color: green}
+.box-warn {color: orange}
 ```
-
-
 On a alors un dom qui se présente ainsi :
 
 ```html
-<div class="box-info">
+<div class="informations">
     <div class="box-success"></div>
     <div class="box-error"></div>
     <div class="box-warn"></div>
 </div>
 ```
 
-#### Qu'est ce que ca apporte ?
+- div.box-success à une couleur verte
+- div.box-error à une couleur rouge
+- div.box-warn à une couleur orange
 
-Le but est de réduire la complexité du CSS, cela dit ca impose d'en avoir une excellente compréhension. Mais ensuite on contextualise plus nos css.
+#### Qu'est-ce que cela apporte ?
 
-Le code est tout aussi verbeux et générique. On ne gagne pas là dessus dans le dom, par contre on a un contexte bien plus expressif pour la personne qui ne comprend pas très bien son CSS.
+Le but est de réduire la complexité du CSS. Par contre, cela impose de lire aisément les CSS et d'avoir pas mal d'expérience. Mais, ensuite on a un contexte plus explicite, donc ce n'est que du bonheur.
 
-Par contre en contrepartie on peut se retrouver avec des classes fantômes, sauf si on fait par exemple : `[clas^="box-"].box`. De la redondance au service de la clarté.
+Le code est tout aussi verbeux et générique. On ne gagne pas là-dessus. Dans le dom on gagne une classe, cool ( *osef* ), par contre on a un contexte bien plus expressif pour la personne qui ne comprend pas très bien son CSS ( *dafuq la logique* ).
 
 Exemple qui tourne en ce moment :
 
@@ -267,7 +269,7 @@ On a ici un exemple de boutons qui sont simple à enrichir, pour tous.
 .h-b {}
 ```
 
-Est ce que tu comprends ce que c'est ? Moi non plus.
+Est-ce que tu arrives à comprendre ce que c'est ? Moi non plus.
 
 ```css
 .font-size-12 {}
@@ -275,7 +277,11 @@ Est ce que tu comprends ce que c'est ? Moi non plus.
 .p10 {}
 ```
 
-Non car le **CSS Atomique** c'est exactement pareil que de faire ca : `style="font:12px; margin:20px;padding:10px"`. En gros, ce n'est pas du CSS.
+Non, car le **CSS Atomique** c'est exactement pareil que de faire ça : `style="font:12px; margin:20px;padding:10px"`. En gros, ce n'est pas du CSS.
+
+Alors, oui c'est plus simple on cale ça partout. Comme une balise style inline hein. C'est juste moins important donc on peut aisément passer dessus. Moi je n'aime pas.
+
+> Petite anecdote, au travail l'autre jour un front, venu tout droit deJava ( *le pauvre* ) a eu exactement la même réflexion que moi. Comme quoi...
 
 
 ## 6. Préprocesseurs ?
