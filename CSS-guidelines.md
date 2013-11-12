@@ -145,13 +145,11 @@ Par ordre logique :
 4. Les background/couleurs
 5. La typo
 
-Après ceci est une recommandation, on peut également le faire avec un ordre alphabétique.
-
-Ce n'est pas le plus important en soi, car c'est quelque chose que l'on peut nettoyer par la suite.
+Après ceci est une recommandation, on peut également le faire avec un ordre alphabétique. Ce n'est pas le plus important en soi, car c'est quelque chose que l'on peut nettoyer par la suite.
 
 > Une piste [The Greatest tool for sorting CSS properties in specific order](http://csscomb.com/) ou alors il doit surement exister une tâche pour Grunt.
 
-## 4. Quelques éléments indispensable
+## 4. Quelques éléments indispensables
 
 - `[type=submit]` = non préférez une structure propre : `[type="submit"]`
 - `border:0px` = non l'unité est inutile ici -> `border: 0`
@@ -164,9 +162,7 @@ Ce n'est pas le plus important en soi, car c'est quelque chose que l'on peut net
 
 ## 5. Ecriture des classes
 
-Afin d'utiliser au maximum la cascade nous utiliserons des classes avec héritages.
-
-Par exemple souhaite styliser nos box sur une home page, celles-ci se ressemble, mais pas trop.
+Afin d'utiliser au maximum la cascade nous utiliserons des classes avec héritages. Ou alors une technique un peu plus Ninja mais, bien plus légère et efficace ( *et aussi spécifique qu'une classe !* ).
 
 ```css
 /***********************
@@ -183,7 +179,8 @@ Par exemple souhaite styliser nos box sur une home page, celles-ci se ressemble,
     color: #777
 }
 
-.box.warn {color: red}
+.warn {color: red; border-color: pink}
+.box.warn {border-color: red}
 ```
 
 On a alors un dom qui se présente ainsi :
@@ -196,13 +193,14 @@ On a alors un dom qui se présente ainsi :
 </div>
 ```
 
-- Une classe est toujours en minuscule et peut contenir un separateur, un tiret
-- Si un id est utilisé pour le style (SSI vous maitrisez le contexte) ne pas le sur classifier div#kikoo est inutile.
-- Idem pour une classe, on peut surclassifié cette dernière mais pas inutilement SVP
-- On fait des classes modulables qui peuvent se chainer
+Ici `div.box.warn` est avec une couleur de police rouge et une bordure rouge également.
+
+- Une classe est toujours en minuscule et peut contenir un séparateur, un tiret
+- Si un id est utilisé pour le style ( *SSI vous maîtrisez le contexte* ) ne pas le sur-classifier div#kikoo est inutile.
 - Pas plus de 4 classes max pour un tag
-- On chaine si on a un traitement specifique pour cette classe extend d'une autre
-- Pas besoin de faire des selecteurs profond, plus il est simple plus on passe dessus vite.
+- Pas besoin de faire des selecteurs profonds, plus il est simple plus on passe dessus vite. ex : `.table-responsive>.table-bordered>thead>tr>th:first-child` cf la source de Twitter Bootstrap.
+
+> Un article à propos de la sur-classification des CSS [Don’t Over-Specify Your CSS Code](http://robertnyman.com/2007/10/18/dont-over-specify-your-css-code/)
 
 ### Mode avancée
 
