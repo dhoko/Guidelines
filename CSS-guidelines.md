@@ -139,11 +139,11 @@ input[type="checkbox"]:checked + div {
 
 Par ordre logique :
 
-.1 Le display
-.2 La taille
-.3 Les modifications tailles
-.4 Les background/couleurs
-.5 La typo
+1. Le display
+2. La taille
+3. Les modifications tailles
+4. Les background/couleurs
+5. La typo
 
 Après ceci est une recommandation, on peut également le faire avec un ordre alphabétique.
 
