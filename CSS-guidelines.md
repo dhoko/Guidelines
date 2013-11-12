@@ -157,6 +157,7 @@ Après ceci est une recommandation, on peut également le faire avec un ordre al
 - `box-sizing: border-box` Amen. L'utilsier tu dois, pourquoi ? [box-sizing, et pourquoi pas ?](http://blog.goetter.fr/post/27612618411/box-sizing-et-pourquoi-pas)
 - Pas de tailles dans line-height cf [Line-Height Units](http://tzi.fr/CSS/Text/line-height-units)
 - Le PX m'a tuer. Préférons **em** ou mieux **rem**.
+- Les sélecteurs oui mais pas trop quand même. [MSIE 4095 Selector limit -- lol](http://www.habdas.org/msie-4095-selector-limit/)
 
 > Une lecture sur les unités en CSS [Which CSS Measurements to use when](http://demosthenes.info/blog/775/Which-CSS-Measurements-To-Use-When)
 
@@ -304,3 +305,25 @@ Et si on expérimentait Flexbox ? Voir les performances sur Android et iOS serai
 
 [A Complete Guide to Flexbox](http://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
+## 8. Quelques liens
+
+### Articles techniques
+
+- [Absolute Horizontal And Vertical Centering In CSS](Absolute Horizontal And Vertical Centering In CSS)
+- [Cat CSS box model](http://www.flickr.com/photos/cmdshiftdesign/5910326877/) Les chats et le CSS, une réussite.
+- [Ce que vous avez toujours voulu savoir sur CSS](http://iamvdo.me/conf/2013/kiwiparty/#/)
+- [A Couple of Use Cases for Calc()](http://css-tricks.com/a-couple-of-use-cases-for-calc/)
+- [Le modèle de boite flexible en CSS 3](http://jeremie.patonnier.net/post/2009/11/10/Le-modele-de-boite-flexible-en-CSS-3)
+
+### Quelques outils
+
+- [AutoPrefixer](https://github.com/ai/autoprefixer) pour les préfixes en se basant sur l'excellent [Can I use...](http://caniuse.com/). Il existe aussi une tâche grunt [grunt-autoprefixer](https://github.com/nDmitry/grunt-autoprefixer).
+- [:nth-tester](http://css-tricks.com/examples/nth-child-tester/) Car nth-child ce n'est forcément ce qui est le plus intuitif.
+- [CSS3 structural pseudo-class selector tester](http://lea.verou.me/demos/nth.html?) pour jouer et comprendre nth-*
+- [Emmet LiveStyle](http://livestyle.emmet.io/) Pour éditer son CSS dans Sublime Text et rafraichir uniquement le CSS dans le navigateur ( *pas de refresh* ). Ou écrire du devtools dans ST2.
+- [Flexy boxes](http://the-echoplex.net/flexyboxes/) Pour les flexbox
+- [CSSCSS](http://zmoazeni.github.io/csscss/) Pour voir la redondance au sein de votre CSS
+- [Em Baseline Generator](http://joshnh.com/tools/em-baseline-generator.html) Car l'em c'est bon pour la santé.
+- [CSS Almanac](http://css-tricks.com/almanac/) Pour comprendre ce que sont les sélecteurs CSS et qui sont-ils. Idem pour les propriétés.
+- [What CSS to prefix?](http://shouldiprefix.com/) Can I use version user-friendly
+- [CSS Compatibility and Internet Explorer](http://msdn.microsoft.com/en-us/library/cc351024(VS.85).aspx) un classique à garder
