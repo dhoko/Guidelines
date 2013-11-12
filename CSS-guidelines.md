@@ -22,9 +22,9 @@ Et ne pas oublier que dans CSS il y a cascade.
 
 ## Table des matières
 
-1. [Indentation](#chaptire1)
-2. [Commentaires](#chaptire2)
-3. [Formatage](#chaptire3)
+1. [Indentation](#1-indentation--)
+2. [Commentaires](#2-commentaires--)
+3. [Formatage](#-formatage--)
 4. [Quelques éléments indispensable](#chaptire4)
 5. [Ecriture des classes](#chaptire5)
 6. [Préprocesseurs ?](#chaptire6)
@@ -121,7 +121,7 @@ Par ordre logique :
 Après c'est une recommendation, on peut faire avec un ordre alphabéthique. Cela dit on va tenter d'automatiser par la suite un parsing du CSS pour trier tout ce code proprement.
 > Une piste [The Greatest tool for sorting CSS properties in specific order](http://csscomb.com/) ou alors un truc avec Grunt.
 
-## Quelques éléments indispensable  <span id="chaptire4"></span>
+## 4. Quelques éléments indispensable  <span id="chaptire4"></span>
 
 - `[type=submit]` = non préférez une structure propre : `[type="submit"]`
 - `border:0px` = non l'unité est inutile ici -> `border: 0`
@@ -132,7 +132,7 @@ Après c'est une recommendation, on peut faire avec un ordre alphabéthique. Cel
 
 > Une lecture sur les unités en CSS [Which CSS Measurements to use when](http://demosthenes.info/blog/775/Which-CSS-Measurements-To-Use-When)
 
-## Ecriture des classes  <span id="chaptire5"></span>
+## 5. Ecriture des classes  <span id="chaptire5"></span>
 
 Afin d'utiliser au maximum la cascade nous utiliserons des classes avec héritages.
 
@@ -250,14 +250,14 @@ Est ce que tu comprends ce que c'est ? Moi non plus.
 Non car le **CSS Atomique** c'est exactement pareil que de faire ca : `style="font:12px; margin:20px;padding:10px"`. En gros, ce n'est pas du CSS.
 
 
-## Préprocesseurs ?  <span id="chaptire6"></span>
+## 6. Préprocesseurs ?  <span id="chaptire6"></span>
 
 Les préprocesseurs c'est bien très bien. Sauf que si vous les utilisez sans connaitre le CSS vous perdez votre temps. Car bien utilisé ca produit de belles choses, sinon non, bien au contraire.
 
 Bilan : non.
 Sinon SASS.
 
-## Le futur  <span id="chaptire7"></span>
+## 7. Le futur  <span id="chaptire7"></span>
 
 Et si on expérimentait Flexbox ? Voir les performances sur Android et iOS serait sympathique. On pourrait aussi voir son influence sur les FPS.
 
