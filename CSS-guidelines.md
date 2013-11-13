@@ -2,7 +2,7 @@
 
 Ce document a pour but de définir une liste de recommandations pour permettre une intégration simple et compréhensible.
 
-Ce document est destiné avant tout à servir au sein de mon équipe dans mon travail. Ce n'est pas gravé dans le marbre, sauf pour les personnes travaillant directement avec moi sur de l'intégration.
+Ce document est destiné avant tout à servir au sein de mon équipe dans mon travail. Ce n'est pas gravé dans le marbre, sauf pour les personnes travaillant directement avec moi sur de l'intégration au sein de [Procheo](http://procheo.fr).
 
 Merci de bien vouloir contribuer.
 
@@ -211,13 +211,13 @@ Si vous êtes à l'aise avec vos CSS vous pouvez passer du côté obscur de l'in
 Par exemple ici la classe `.box` n'est pas forcément nécessaire, nous pouvons aller beaucoup plus loin en conservant un bon niveau de lisibilité.
 
 ```css
-[clas^="box-"] {
+[class^="box-"] {
     padding: 5px 10px;
     margin: 5px;
     border: 1px solid #eee;
     color: #777
 }
-.box-warn {color: red}
+.box-error {color: red}
 .box-success {color: green}
 .box-warn {color: orange}
 ```
