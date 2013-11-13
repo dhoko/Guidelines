@@ -155,7 +155,7 @@ Après ceci est une recommandation, on peut également le faire avec un ordre al
 - `[type=submit]` = non préférez une structure propre : `[type="submit"]`
 - `border:0px` = non l'unité est inutile ici -> `border: 0`
 - `-webkit-border-radius` **Non** [What CSS to prefix?](http://shouldiprefix.com/)
-- `box-sizing: border-box` Amen. L'utilsier tu dois, pourquoi ? [box-sizing, et pourquoi pas ?](http://blog.goetter.fr/post/27612618411/box-sizing-et-pourquoi-pas)
+- `box-sizing: border-box` Amen. L'utiliser tu dois, pourquoi ? [box-sizing, et pourquoi pas ?](http://blog.goetter.fr/post/27612618411/box-sizing-et-pourquoi-pas)
 - Pas de tailles dans line-height cf [Line-Height Units](http://tzi.fr/CSS/Text/line-height-units)
 - Le PX m'a tuer. Préférons **em** ou mieux **rem**.
 - Les sélecteurs oui mais pas trop quand même. [MSIE 4095 Selector limit -- lol](http://www.habdas.org/msie-4095-selector-limit/)
