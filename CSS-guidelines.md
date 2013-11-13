@@ -61,9 +61,9 @@ Par contre, pour `!important`, il n'y a pas de négociation. Non, je pense même
 
 ## 1. Indentation
 
-Identons avec des **espaces**, avec un tab qui vaut 4 espaces. Le code en est plus clair et lisible.
+Indentons avec des **espaces**, avec un tab qui vaut 4 espaces. Le code en est plus clair et lisible.
 
-De plus l'espace passe partout quel que soit le support et l'éditeur ou le site ( *copions du code dans une issue Github tab vs espaces* ).
+De plus, l'espace passe partout quel que soit le support et l'éditeur ou le site ( *copions du code dans une issue Github tab vs espaces* ).
 
 ***On ne mélange pas les deux***
 
@@ -164,7 +164,7 @@ Après ceci est une recommandation, on peut également le faire avec un ordre al
 
 ## 5. Ecriture des classes
 
-Afin d'utiliser au maximum la cascade nous utiliserons des classes avec héritages. Ou alors une technique un peu plus Ninja mais, bien plus légère et efficace ( *et aussi spécifique qu'une classe !* ).
+Afin d'utiliser au maximum la cascade, nous utiliserons des classes avec héritages. Ou alors une technique un peu plus Ninja mais, bien plus légère et efficace ( *et aussi spécifique qu'une classe !* ).
 
 ```css
 /***********************
@@ -185,7 +185,7 @@ Afin d'utiliser au maximum la cascade nous utiliserons des classes avec héritag
 .box.warn {border-color: red}
 ```
 
-On a alors un dom qui se présente ainsi :
+On a alors un DOM qui se présente ainsi :
 
 ```html
 <div class="informations">
@@ -221,7 +221,7 @@ Par exemple ici la classe `.box` n'est pas forcément nécessaire, nous pouvons 
 .box-success {color: green}
 .box-warn {color: orange}
 ```
-On a alors un dom qui se présente ainsi :
+On a alors un DOM qui se présente ainsi :
 
 ```html
 <div class="informations">
@@ -239,7 +239,7 @@ On a alors un dom qui se présente ainsi :
 
 Le but est de réduire la complexité du CSS. Par contre, cela impose de lire aisément les CSS et d'avoir pas mal d'expérience. Mais, ensuite on a un contexte plus explicite, donc ce n'est que du bonheur.
 
-Le code est tout aussi verbeux et générique. On ne gagne pas là-dessus. Dans le dom on gagne une classe, cool ( *osef* ), par contre on a un contexte bien plus expressif pour la personne qui ne comprend pas très bien son CSS ( *dafuq la logique* ).
+Le code est tout aussi verbeux et générique. On ne gagne pas là-dessus. Dans le DOM on gagne une classe, cool ( *osef* ), par contre on a un contexte bien plus expressif pour la personne qui ne comprend pas très bien son CSS ( *dafuq la logique* ).
 
 Exemple qui tourne en ce moment :
 
