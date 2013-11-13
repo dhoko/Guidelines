@@ -1,4 +1,4 @@
-# Pour une conception simple et cohérente de vos intégrations
+# Pour une CSS simple et réutilisable
 
 Ce document a pour but de définir une liste de recommandations pour permettre une intégration simple et compréhensible.
 
