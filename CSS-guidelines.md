@@ -204,7 +204,7 @@ Ici `div.box.warn` est avec une couleur de police rouge et une bordure rouge ég
 
 > Un article à propos de la sur-classification des CSS [Don’t Over-Specify Your CSS Code](http://robertnyman.com/2007/10/18/dont-over-specify-your-css-code/)
 
-### Mode avancée
+### Mode avancé
 
 Si vous êtes à l'aise avec vos CSS vous pouvez passer du côté obscur de l'intégrateur, la manipulation d'attribut. Si vous n'êtes pas vraiment à l'aise utilisez ce guide : [The Skinny on CSS Attribute Selectors](http://css-tricks.com/attribute-selectors/).
 
