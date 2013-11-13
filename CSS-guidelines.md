@@ -263,7 +263,7 @@ Exemple qui tourne en ce moment :
 
 On a ici un exemple de boutons qui sont simple à enrichir, pour tous.
 
-### Mauvais nomage
+### Mauvais nommage
 
 ```css
 .h {}
