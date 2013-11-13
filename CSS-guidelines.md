@@ -23,7 +23,7 @@ Déjà, le 'if' nous avons ( *pseudo-classes etc.* ), le calcul ça arrive ( *ca
 - -ms-* (pour une intégration dédié Webkit -- Webkit m'a tuer)
 - etc.
 
-Devant ces cancers, nous autres intégrateurs nous devons apporter des soins. La cascade c'est de l'art, pas un truc qui fait chier donc on met un '!important'.
+Devant ces cancers, nous autres intégrateurs nous devons apporter des soins. La cascade c'est de l'art, pas un truc qui fait chier donc on met un `!important`.
 
 Une intégration doit facilement pouvoir évoluer et pouvoir et changer de mains, sans pour autant perdre le dev ou l'intégrateur.
 
