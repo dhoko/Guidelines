@@ -152,8 +152,24 @@ Après ceci est une recommandation, on peut également le faire avec un ordre al
 
 ## 4. Quelques éléments indispensables
 
-- `[type=submit]` = non préférez une structure propre : `[type="submit"]`
-- `border:0px` = non l'unité est inutile ici -> `border: 0`
+### Les guillemets pour les attributs
+
+```css
+// Mauvaise forme
+[type=submit] {}
+
+// Forme propre
+[type="submit"] {}
+```
+
+Il est préférable d'utiliser des sélecteurs d'attributs avec des doubles guillemets. Pourquoi ? C'est bien plus lisible et propre ainsi, puis on sélectionne une *string* donc autant faire comme dans d'autres langages.
+
+### Les unités inutiles
+
+Lorsque nous remettons certaines propriétés à zéro on rencontre souvent cette forme `border:0px`. C'est inutile, en CSS un simple `border:0` suffit.
+
+### Autres
+
 - `-webkit-border-radius` **Non** [What CSS to prefix?](http://shouldiprefix.com/)
 - `box-sizing: border-box` Amen. L'utiliser tu dois, pourquoi ? [box-sizing, et pourquoi pas ?](http://blog.goetter.fr/post/27612618411/box-sizing-et-pourquoi-pas)
 - Pas de tailles dans line-height cf [Line-Height Units](http://tzi.fr/CSS/Text/line-height-units)
