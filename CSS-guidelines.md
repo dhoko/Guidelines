@@ -173,7 +173,7 @@ Lorsque nous remettons certaines propriétés à zéro on rencontre souvent cett
 - `-webkit-border-radius` **Non** [What CSS to prefix?](http://shouldiprefix.com/)
 - `box-sizing: border-box` Amen. L'utiliser tu dois, pourquoi ? [box-sizing, et pourquoi pas ?](http://blog.goetter.fr/post/27612618411/box-sizing-et-pourquoi-pas)
 - Pas de tailles dans line-height cf [Line-Height Units](http://tzi.fr/CSS/Text/line-height-units)
-- Le PX m'a tuer. Préférons **em** ou mieux **rem**.
+- Le PX m'a tuer. Préférons **em** ou mieux **rem** [Un petit pas pour l'em, un grand pas pour le web - Paris Web 2013](http://fr.slideshare.net/nhoizey/paris-web-2013-un-petit-pas-pour-lem-un-grand-pas-pour-le-web) et [Refonte de mon portfolio : du responsive tout en em](http://marieguillaumet.com/refonte-mon-portfolio-du-responsive-en-em-premiere-partie/)
 - Les sélecteurs oui mais pas trop quand même. [MSIE 4095 Selector limit -- lol](http://www.habdas.org/msie-4095-selector-limit/)
 
 > Une lecture sur les unités en CSS [Which CSS Measurements to use when](http://demosthenes.info/blog/775/Which-CSS-Measurements-To-Use-When)
