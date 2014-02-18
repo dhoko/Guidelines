@@ -43,7 +43,7 @@ Le mot d'ordre est [KISS](http://wikipedia.org/KISS) issu du monde unix. Puis au
 
 ## Avant de commencer
 
-- **Ne jamais styliser sur un id**
+- **Ne jamais styliser sur un id** (***Enfin si mais avec [id="monid"], comme ça le sélècteur est léger***)
 - **Ne jamais utiliser !important**
 - Ne jamais mettre une seule typo dans une font-family
 - Test de la typo sur un navigateur = tester une intégration dans Chrome et dire ok pour IE6
