@@ -24,26 +24,29 @@ Le mot d'ordre est [KISS](http://wikipedia.org/KISS) issu du monde unix. Puis DR
 - **Ne jamais styliser sur un id**
 - **Ne jamais utiliser !important**
 - **Ne jamais utiliser de style inline** (*A noter que l'approche pour du Natif, cf react-native est intéressante*)
+- Ne jamais mettre de vendor prefix (*Laissons AutoPrefixer faire le boulôt*)
+- Evitez les styles sur les tags
 - Ne jamais mettre une seule typo dans une font-family
 - Test all the things !
 - Garder une spécificité moyenne de 10/20
 - Pas de classes magiques (*text-align mis à part ainsi que float et clear: both*)
 - Lire et imprimer ça :  [Learn CSS Specifishity with plankton, fish and sharks](http://www.standardista.com/wp-content/uploads/2012/01/specifishity1.pdf)
 
-### Pourquoi on ne stylise pas sur un id ou avec !important
+### Pourquoi ne pas styliser sur autre chose que des classes en général
 
-Ils possèdent tous les deux une spécificité trop importante. Passer dessus un id on peut aisément. Mais pour !important, gloups (déjà vu hélas...).
+La classe possède une spécificité faible *10* ce qui permet de repasser dessus aisément. L'ID étant à *100* c'est beaucoup plus difficile.
 
-Un id étant unique, très peu d'éléments sont susceptibles d'avoir un style avec id, car ça veut dire un truc qui n'est jamais dupliqué ( *un logo dans le header on peut imaginer* ). Une fois que l'on maitrise le contexte on peut styliser un id.
+Bien sur grâce à la cascade on peut surcharger tout, même des `!importants`, mais ce n'est pas parceque l'on peut que l'on doit.
 
-Par contre, pour `!important`, il n'y a pas de négociation. Non, je pense même que mettre un !important dans sa CSS montre que celle-ci est mal pensée.
+> Pour le cas du tag, le soucis ne provient pas de la spécificité mais de sa globalité. On stylise body html main mais pas plus.
 
+La classe permet de garder un code maintenable.
 
 ## 1. Indentation
 
-Indentons avec des **espaces**, avec un tab qui vaut 4 espaces. Le code en est plus clair et lisible.
+L'indentation doit se faire avec des **espaces**. Le tab doit contenir **2 espaces**.
 
-De plus, l'espace passe partout quel que soit le support et l'éditeur ou le site ( *copions du code dans une issue Github tab vs espaces* ).
+> Pourquoi ? L'espace est fixe quelque soit l'env et l'éditeur. De plus pour copier son code dans Github, gist, jsfiddle, codepen etc. c'est pratique, on a le rendu attendu.
 
 ***On ne mélange pas les deux***
 
@@ -53,46 +56,7 @@ De plus, l'espace passe partout quel que soit le support et l'éditeur ou le sit
 
 ## 2. Commentaires
 
-Quel que soit le projet : *un code sans commentaires ne vaut rien*.
-
-Il n'y a pas d'argument recevable si ce n'est, une issue de 3 écrans pour vous expliquer pourquoi on commente, comment et avec quel outil ( *travailler avec moi est très drôle* ).
-
-Revenons à nos moutons, en CSS nous ne commentons pas tout et pas n'importe comment. Nous faisons ici du **commentaire de zone**. Les classes doivent être assez expressives pour permettre ceci ( *encore un coup contre le CSS atomique* ).
-
-
-```css
-/***********************
-*
-*    Header
-*
-************************/
-
-.header {
-    height: 150px;
-    background: #bada55
-}
-
-.header ul li {display: inline-block} // Spéciale dédicasse à IE
-
-.header::before {
-    content: '42'
-}
-```
-
-Sinon en plein milieu de votre code, un commentaire classique suffit :
-
-```css
-.post-content {
-    padding: 2px 4px;
-
-    /* Un peu de magie */
-    margin-left: 13,37px
-
-    border-color: #c0ffee
-}
-```
-
-Le fait de sauter une ligne avant et après peut mettre en valeur ce commentaire.
+> Dans les dix commandements on peut trouver: "Ton code tu commenteras"
 
 ## 3. Formatage
 
@@ -100,7 +64,7 @@ Le fait de sauter une ligne avant et après peut mettre en valeur ce commentaire
 - Retour à la ligne après chaque propriété
 - Pas de point virgule pour la dernière propriété
 - Toujours des doubles guillemets pour les sélecteurs d'attributs
-- Indentation de 4 espaces avant chaque propriété
+- Indentation de 2 espaces avant chaque propriété
 - Pas d'espace entre la propriété et le :
 - Un espace après le :
 - Pas d'inline si > 2 propriétés
@@ -111,7 +75,7 @@ On obtient donc :
 ```css
 input[type="checkbox"]:checked + div {
     border-color: #bada55;
-    background-color: #676767;
+    background-color: #c0ff33;
     opacity: 1
 }
 ```
@@ -126,9 +90,7 @@ Par ordre logique :
 4. Les background/couleurs
 5. La typo
 
-Après ceci est une recommandation, on peut également le faire avec un ordre alphabétique. Ce n'est pas le plus important en soi, car c'est quelque chose que l'on peut nettoyer par la suite.
-
-> Une piste [The Greatest tool for sorting CSS properties in specific order](http://csscomb.com/) ou alors il doit surement exister une tâche pour Grunt.
+> Une piste [The Greatest tool for sorting CSS properties in specific order](http://csscomb.com/).
 
 ## 4. Quelques éléments indispensables
 
@@ -142,11 +104,23 @@ Après ceci est une recommandation, on peut également le faire avec un ordre al
 [type="submit"] {}
 ```
 
-Il est préférable d'utiliser des sélecteurs d'attributs avec des doubles guillemets. Pourquoi ? C'est bien plus lisible et propre ainsi, puis on sélectionne une *string* donc autant faire comme dans d'autres langages.
+Facilitons la lecture, mettons des doubles guillemets.
 
 ### Les unités inutiles
 
-Lorsque nous remettons certaines propriétés à zéro on rencontre souvent cette forme `border:0px`. C'est inutile, en CSS un simple `border:0` suffit.
+Inutile de mettre des unités quand nous mettons une propriété à zéro:
+
+```css
+border: 0px; /* Nop */
+border: 0; /* Oui */
+```
+
+De même pour les valeurs décimales:
+
+```css
+font-size: 0.4em; /* Nop */
+font-size: .4em; /* Oui */
+```
 
 ### Autres
 
@@ -160,90 +134,64 @@ Lorsque nous remettons certaines propriétés à zéro on rencontre souvent cett
 
 ## 5. Ecriture des classes
 
-Afin d'utiliser au maximum la cascade, nous utiliserons des classes avec héritages. Ou alors une technique un peu plus Ninja mais, bien plus légère et efficace ( *et aussi spécifique qu'une classe !* ).
+```
+.[namespace]-{container|figure|?}-{item,type,object}-flag
+```
+
+- *namespace*: Le type de module sur lequel votre CSS s'applique
+- *{container|figure|?}*: Le niveau/typage du module
+- *{item,type,object}*: Le type d'élément (titre etc.)
+- *flag*: succes,error,solde etc.
+
+> On peut avoir jusqu'a deux typages de modules
+
+##### Exemple:
 
 ```css
-/***********************
-*
-*   Box Home page
-*
-************************/
-.informations {width: 600px; margin: 0 auto}
+.grid-container {}
+.grid-container-item {}
+.grid-container-item-odd {}
 
-.box {
-    padding: 5px 10px;
-    margin: 5px;
-    border: 1px solid #eee;
-    color: #777
-}
-
-.warn {color: red; border-color: pink}
-.box.warn {border-color: red}
+/*
+  Namespace = shopList
+  Typage 1 = info
+  Typage 2 = container
+ */
+.shopList-info-container {}
+.shopList-info-container-title {}
 ```
 
-On a alors un DOM qui se présente ainsi :
+##### Précisions
 
-```html
-<div class="informations">
-    <div class="box"></div>
-    <div class="box warn"></div>
-    <div class="box"></div>
-</div>
-```
+Il est d'usage de définir,
+  - les li d'utiles liste ainsi: `namespace-item`
+  - les containers de liste: `namespace-container`
+  - les figure (contenant une image): `namespace-figure`
+  - l'image dans une figure': `namespace-figure-item`
+  - la figcaption dans une figure': `namespace-figure-legend`
 
-Ici `div.box.warn` est avec une couleur de police rouge et une bordure rouge également.
+> *Le type d'objet n'est pas obligatoire, on peut avoir toggle qui est un flag après le typage de module.*
 
-- Une classe est toujours en minuscule et peut contenir un séparateur, un tiret
-- Si un id est utilisé pour le style ( *SSI vous maîtrisez le contexte* ) ne pas le sur-classifier div#kikoo est inutile.
-- Pas plus de 4 classes max pour un tag
-- Pas besoin de faire des selecteurs profonds, plus il est simple plus on passe dessus vite. ex : `.table-responsive>.table-bordered>thead>tr>th:first-child` cf la source de Twitter Bootstrap.
 
-> Un article à propos de la sur-classification des CSS [Don’t Over-Specify Your CSS Code](http://robertnyman.com/2007/10/18/dont-over-specify-your-css-code/)
+### Sélecteurs
 
-### Mode avancé
+On utilise beaucoup les attributs cf [The Skinny on CSS Attribute Selectors](http://css-tricks.com/attribute-selectors/). Pourquoi ?
 
-Si vous êtes à l'aise avec vos CSS vous pouvez passer du côté obscur de l'intégrateur, la manipulation d'attribut. Si vous n'êtes pas vraiment à l'aise utilisez ce guide : [The Skinny on CSS Attribute Selectors](http://css-tricks.com/attribute-selectors/).
+- Factorisation du code
+- Poid minime
+- Evite de mettre des classes de partout
+- Si on respecte les conventions c'est simple et léger
+- Pas de CSS trop longues
 
-Par exemple ici la classe `.box` n'est pas forcément nécessaire, nous pouvons aller beaucoup plus loin en conservant un bon niveau de lisibilité.
+> Par contre c'est nettement moins accessible et moins lisible.
+
+#### Exemple:
 
 ```css
-[class^="box-"] {
-    padding: 5px 10px;
-    margin: 5px;
-    border: 1px solid #eee;
-    color: #777
-}
-.box-error {color: red}
-.box-success {color: green}
-.box-warn {color: orange}
-```
-On a alors un DOM qui se présente ainsi :
-
-```html
-<div class="informations">
-    <div class="box-success"></div>
-    <div class="box-error"></div>
-    <div class="box-warn"></div>
-</div>
-```
-
-- div.box-success à une couleur verte
-- div.box-error à une couleur rouge
-- div.box-warn à une couleur orange
-
-#### Qu'est-ce que cela apporte ?
-
-Le but est de réduire la complexité du CSS. Par contre, cela impose de lire aisément les CSS et d'avoir pas mal d'expérience. Mais, ensuite on a un contexte plus explicite, donc ce n'est que du bonheur.
-
-Le code est tout aussi verbeux et générique. On ne gagne pas là-dessus. Dans le DOM on gagne une classe, cool ( *osef* ), par contre on a un contexte bien plus expressif pour la personne qui ne comprend pas très bien son CSS ( *dafuq la logique* ).
-
-Exemple qui tourne en ce moment :
-
-```css
-[class^="kaction-"] {
+[class^="btn-kaction-"] {
     display: inline-block;
-    width: 15px;
-    height: 15px;
+    width: 1em;
+    height: 1em;
     border: 0;
     background-color: transparent;
     background-repeat: no-repeat;
@@ -251,56 +199,29 @@ Exemple qui tourne en ce moment :
     text-indent: -9999px
 }
 
-.kaction-edit {background-image: url(/static/images/picto/edit.png)}
-.kaction-delete {background-image: url(/static/images/picto/bin.png)}
-.kaction-duplicate {background-image: url(/static/images/picto/duplicate.png)}
-.kaction-password {background-image: url(/static/images/picto/password.png)}
+.btn-kaction-edit {background-image: url(/static/images/picto/edit.png)}
+.btn-kaction-delete {background-image: url(/static/images/picto/bin.png)}
+.btn-kaction-duplicate {background-image: url(/static/images/picto/duplicate.png)}
+.btn-kaction-password {background-image: url(/static/images/picto/password.png)}
 ```
 
 On a ici un exemple de boutons qui sont simple à enrichir, pour tous.
 
-### Mauvais nommage
+### Specificité
 
-```css
-.h {}
-.h__toto_truc {}
-.h-b {}
-```
-
-Est-ce que tu arrives à comprendre ce que c'est ? Moi non plus.
-
-```css
-.font-size-12 {}
-.m20 {}
-.p10 {}
-```
-
-Non, car le **CSS Atomique** c'est exactement pareil que de faire ça : `style="font:12px; margin:20px;padding:10px"`. En gros, ce n'est pas du CSS.
-
-Alors, oui c'est plus simple on cale ça partout. Comme une balise style inline hein. C'est juste moins important donc on peut aisément passer dessus. Moi je n'aime pas.
-
-> Petite anecdote, au travail l'autre jour un front, venu tout droit deJava ( *le pauvre* ) a eu exactement la même réflexion que moi. Comme quoi...
-
+En moyenne entre 10/20, il est préférable de ne pas dépasser un attribut ou une classe sur un sélecteurs. Restons simple et léger.
 
 ## 6. Préprocesseurs ?
 
-Les préprocesseurs c'est bien très bien. Mais ceux-ci imposent certaines choses :
-- Connaitre les CSS pour ne pas produire une CSS en carton
-- Avoir un langage différent ( *mais qui permet de faire des choses ultra puissantes* )
-- Compiler sa CSS
-- Un debug un peu moins sympa
-- Pour ceux qui ne s'en servent pas, entendre dans 80% des cas des arguments de front ne sachant pas ce qu'est le CSS, donc des arguments de merde.
+Non.
 
-Je ne suis pas contre, mais ici on parle de CSS.
-Bilan : non.
+## 7. Postprocesseurs ?
 
-> Si tu veux te lancer quand même car tu te touches en CSS, pars vers Sass. Puis pour trouver de l'information et un frenchie qui se touche bien avec Sass va voir [Hugo Giraudel](http://hugogiraudel.com)
+J'ai pour habitude de scinder mes CSS par modules et de concaténer tout.
 
-## 7. Le futur
+Seulement si je veux faires des comportements pour toute mon app, je dois mettre un `_` devant le nom du fichier sinon il risque d'arriver après d'autres styles puis avec la cascade boum ça casse.
 
-Et si on expérimentait Flexbox ? Voir les performances sur Android et iOS serait sympathique. On pourrait aussi voir son influence sur les FPS.
-
-[A Complete Guide to Flexbox](http://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+Solution: [PostCSS import](https://github.com/postcss/postcss-import) ou encore [CSSNext](https://github.com/cssnext/cssnext) si on veut faire du "CSS4".
 
 ## 8. Quelques liens
 
@@ -317,7 +238,6 @@ Et si on expérimentait Flexbox ? Voir les performances sur Android et iOS serai
 - [AutoPrefixer](https://github.com/ai/autoprefixer) pour les préfixes en se basant sur l'excellent [Can I use...](http://caniuse.com/). Il existe aussi une tâche grunt [grunt-autoprefixer](https://github.com/nDmitry/grunt-autoprefixer).
 - [:nth-tester](http://css-tricks.com/examples/nth-child-tester/) Car nth-child ce n'est forcément ce qui est le plus intuitif.
 - [CSS3 structural pseudo-class selector tester](http://lea.verou.me/demos/nth.html?) pour jouer et comprendre nth-*
-- [Emmet LiveStyle](http://livestyle.emmet.io/) Pour éditer son CSS dans Sublime Text et rafraichir uniquement le CSS dans le navigateur ( *pas de refresh* ). Ou écrire du devtools dans ST2.
 - [Flexy boxes](http://the-echoplex.net/flexyboxes/) Pour les flexbox
 - [CSSCSS](http://zmoazeni.github.io/csscss/) Pour voir la redondance au sein de votre CSS
 - [Em Baseline Generator](http://joshnh.com/tools/em-baseline-generator.html) Car l'em c'est bon pour la santé.
