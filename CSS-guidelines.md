@@ -2,11 +2,7 @@
 
 ## Introduction
 
-Il est indispensable de ne pas coder pour soi-même mais, pour tous.
-Une intégration doit pouvoir être repise par une autre personne sans la perdre, il doit y a voir de la logique.
-
-Le mot d'ordre est [KISS](http://wikipedia.org/KISS) issu du monde unix. Puis DRY aussi.
-
+Mot d'ordre ? [KISS](http://wikipedia.org/KISS)
 
 ## Table des matières
 
@@ -19,36 +15,26 @@ Le mot d'ordre est [KISS](http://wikipedia.org/KISS) issu du monde unix. Puis DR
 7. [Le futur](#7-le-futur--)
 8. [Quelques liens](#8-quelques-liens)
 
-## Avant de commencer
+## TL;DR
 
-- **Ne jamais styliser sur un id**
-- **Ne jamais utiliser !important**
-- **Ne jamais utiliser de style inline** (*A noter que l'approche pour du Natif, cf react-native est intéressante*)
-- Ne jamais mettre de vendor prefix (*Laissons AutoPrefixer faire le boulôt*)
-- Evitez les styles sur les tags
-- Ne jamais mettre une seule typo dans une font-family
-- Test all the things !
+- On ne stylise pas avec
+  - un id
+  - `!important`
+  - du style inline
+- On évite les styles sur des tas
+- On ne met pas de choses inutiles comme les préfixes dans sa CSS
 - Garder une spécificité moyenne de 10/20
-- Pas de classes magiques (*text-align mis à part ainsi que float et clear: both*)
+- Pas de classes magiques (*.left, .right, .center, .mp*)
 - Lire et imprimer ça :  [Learn CSS Specifishity with plankton, fish and sharks](http://www.standardista.com/wp-content/uploads/2012/01/specifishity1.pdf)
 
-### Pourquoi ne pas styliser sur autre chose que des classes en général
-
-La classe possède une spécificité faible *10* ce qui permet de repasser dessus aisément. L'ID étant à *100* c'est beaucoup plus difficile.
-
-Bien sur grâce à la cascade on peut surcharger tout, même des `!importants`, mais ce n'est pas parceque l'on peut que l'on doit.
-
-> Pour le cas du tag, le soucis ne provient pas de la spécificité mais de sa globalité. On stylise body html main mais pas plus.
-
-La classe permet de garder un code maintenable.
 
 ## 1. Indentation
 
-L'indentation doit se faire avec des **espaces**. Le tab doit contenir **2 espaces**.
+On indente avec des **espaces**, on obtient donc: 1 tab = 2 espaces.
 
-> Pourquoi ? L'espace est fixe quelque soit l'env et l'éditeur. De plus pour copier son code dans Github, gist, jsfiddle, codepen etc. c'est pratique, on a le rendu attendu.
+> Pourquoi ? L'espace est fixe quelque soit l'env et l'éditeur. De plus pour copier son code dans Github, gist, jsfiddle, codepen etc. c'est fiable, on a le rendu attendu.
 
-***On ne mélange pas les deux***
+> *On ne mélange pas les deux*
 
 > PS 1 : pensez à configurer votre éditeur comme SublimeText pour qu'il enregistre vos fichiers avec des espaces automatiquement.
 
@@ -74,37 +60,11 @@ On obtient donc :
 
 ```css
 input[type="checkbox"]:checked + div {
-    border-color: #bada55;
-    background-color: #c0ff33;
-    opacity: 1
+  border-color: #bada55;
+  background-color: #c0ff33;
+  opacity: 1
 }
 ```
-
-### Ordre de déclaration
-
-Par ordre logique :
-
-1. Le display
-2. La taille
-3. Les modifications tailles
-4. Les background/couleurs
-5. La typo
-
-> Une piste [The Greatest tool for sorting CSS properties in specific order](http://csscomb.com/).
-
-## 4. Quelques éléments indispensables
-
-### Les guillemets pour les attributs
-
-```css
-// Mauvaise forme
-[type=submit] {}
-
-// Forme propre
-[type="submit"] {}
-```
-
-Facilitons la lecture, mettons des doubles guillemets.
 
 ### Les unités inutiles
 
@@ -122,9 +82,21 @@ font-size: 0.4em; /* Nop */
 font-size: .4em; /* Oui */
 ```
 
+### Ordre de déclaration
+
+Par ordre logique :
+
+1. Le display
+2. La taille
+3. Les modifications tailles
+4. Les background/couleurs
+5. La typo
+
+> Une piste [The Greatest tool for sorting CSS properties in specific order](http://csscomb.com/).
+
+
 ### Autres
 
-- `-webkit-border-radius` **Non** [What CSS to prefix?](http://shouldiprefix.com/)
 - `box-sizing: border-box` Amen. L'utiliser tu dois, pourquoi ? [box-sizing, et pourquoi pas ?](http://blog.goetter.fr/post/27612618411/box-sizing-et-pourquoi-pas)
 - Pas de tailles dans line-height cf [Line-Height Units](http://tzi.fr/CSS/Text/line-height-units)
 - Le PX m'a tuer. Préférons **em** ou mieux **rem** [Un petit pas pour l'em, un grand pas pour le web - Paris Web 2013](http://fr.slideshare.net/nhoizey/paris-web-2013-un-petit-pas-pour-lem-un-grand-pas-pour-le-web) et [Refonte de mon portfolio : du responsive tout en em](http://marieguillaumet.com/refonte-mon-portfolio-du-responsive-en-em-premiere-partie/)
@@ -132,7 +104,7 @@ font-size: .4em; /* Oui */
 
 > Une lecture sur les unités en CSS [Which CSS Measurements to use when](http://demosthenes.info/blog/775/Which-CSS-Measurements-To-Use-When)
 
-## 5. Ecriture des classes
+## 4. Ecriture des classes
 
 ```
 .[namespace]-{container|figure|?}-{item,type,object}-flag
@@ -211,19 +183,68 @@ On a ici un exemple de boutons qui sont simple à enrichir, pour tous.
 
 En moyenne entre 10/20, il est préférable de ne pas dépasser un attribut ou une classe sur un sélecteurs. Restons simple et léger.
 
-## 6. Préprocesseurs ?
+## 5. Préprocesseurs ?
 
 Non.
 
-## 7. Postprocesseurs ?
+## 6. Postprocesseurs ?
 
 J'ai pour habitude de scinder mes CSS par modules et de concaténer tout.
 
 Seulement si je veux faires des comportements pour toute mon app, je dois mettre un `_` devant le nom du fichier sinon il risque d'arriver après d'autres styles puis avec la cascade boum ça casse.
 
-Solution: [PostCSS import](https://github.com/postcss/postcss-import) ou encore [CSSNext](https://github.com/cssnext/cssnext) si on veut faire du "CSS4".
+Solution: [PostCSS import](https://github.com/postcss/postcss-import) ou encore [CSSNext](https://github.com/cssnext/cssnext) si on veut faire du *"CSS4"*.
 
-## 8. Quelques liens
+### Découpage
+
+Voilà un fichier `index.css` que j'utilise avec [PostCSS import](https://github.com/postcss/postcss-import).
+
+```css
+@import 'common.css';
+@import 'buttons.css';
+
+/* UI modules */
+@import 'ui/sidebarRwd.css';
+@import 'ui/grid.css';
+
+/* Modules */
+@import 'modules/cartList.css';
+@import 'modules/navBar.css';
+
+/* Pages */
+@import 'pages/home.css';
+@import 'pages/login.css';
+```
+
+L'arborescence qui va avec:
+
+```shell
+.
+├── common.css
+├── buttons.css
+├── ui
+    ├── sidebarRwd.css
+    └── grid.css
+├── modules
+    ├── cartList.css
+    └── navBar.css
+└── pages
+    ├── home.css
+    └── login.css
+```
+
+### Fonctionnement
+
+Ce qui est dans `common.css`, c'est ce qui est global, on y trouve des styles sur certains tag comme le a. Ou encore le fonctionnement de mon wrapper.
+
+Dans les modules ui, ce sont des classes qui vont pouvoir être utilisés ailleurs. Design de base et surtout de la structure.
+
+Dans les modules, ce sont chaques composants de mes sites/applications. Tout est granulaire donc une CSS par composant. Chaque fichier est léger et est responsable de son évolution à travers les différentes tailles de viewport.
+
+Dans les pages ce sont des styles spécifiques pour une page. C'est une surcouche au cas ou. J'ai toujours une classe `(state|page)-<nom de ma page>` dans mon body, pour ça. Ca apporte un confort pas franchement indispensable, mais parfois utile.
+
+
+## 6. Quelques liens
 
 ### Articles techniques
 
@@ -245,6 +266,6 @@ Solution: [PostCSS import](https://github.com/postcss/postcss-import) ou encore 
 - [What CSS to prefix?](http://shouldiprefix.com/) Can I use version user-friendly
 - [CSS Compatibility and Internet Explorer](http://msdn.microsoft.com/en-us/library/cc351024.aspx) un classique à garder
 
-## 9. Remerciements
+## 97. Remerciements
 
 A vous :)
